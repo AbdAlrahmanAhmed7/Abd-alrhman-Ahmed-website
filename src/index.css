@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+  
+  --color-brand-purple: #9d50bb;
+  --color-brand-blue: #6e7ff3;
+  --color-brand-neon: #00f2ff;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans selection:bg-brand-blue/30 selection:text-brand-neon;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-2xl border border-white/5;
+  }
+  
+  .neon-glow-purple {
+    box-shadow: 0 0 20px rgba(157, 80, 187, 0.3), 0 0 40px rgba(157, 80, 187, 0.1);
+  }
+  
+  .neon-glow-blue {
+    box-shadow: 0 0 20px rgba(110, 127, 243, 0.3), 0 0 40px rgba(110, 127, 243, 0.1);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-purple via-brand-blue to-brand-neon;
+  }
+
+  @keyframes scan {
+    0% { top: -10%; }
+    100% { top: 110%; }
+  }
+}
