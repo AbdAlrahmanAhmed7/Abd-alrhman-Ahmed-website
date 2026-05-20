@@ -1,3 +1,8 @@
+import carvoImg from "./assets/images/carvo.png";
+import jukoImg from "./assets/images/juko.png";
+import mortalImg from "./assets/images/mortal.png";
+import shinoImg from "./assets/images/shino.png";
+
 export const NAV_LINKS = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -22,7 +27,7 @@ export const PROJECTS = [
   {
     title: "Carvo - Premium Rentals",
     description: "A high-performance car rental platform with a modern dark interface and smooth animations.",
-    image: "/src/assets/images/carvo.png",
+    image: carvoImg,
     tags: ["React", "Tailwind", "Vercel"],
     demo: "https://carvo-phi.vercel.app",
     github: "#",
@@ -30,7 +35,7 @@ export const PROJECTS = [
   {
     title: "Jukoo Store",
     description: "A premium e-commerce experience for digital products, featuring glassmorphism and seamless navigation.",
-    image: "/src/assets/images/juko.png",
+    image: jukoImg,
     tags: ["React", "E-Commerce", "Motion"],
     demo: "https://jukoo-store.vercel.app/",
     github: "#",
@@ -38,7 +43,7 @@ export const PROJECTS = [
   {
     title: "Mortal Gym",
     description: "An aggressive and immersive fitness landing page designed to showcase elite performance.",
-    image: "/src/assets/images/mortal.png",
+    image: mortalImg,
     tags: ["Frontend", "UI/UX", "Responsive"],
     demo: "https://mortal-gym.vercel.app/",
     github: "#",
@@ -46,7 +51,7 @@ export const PROJECTS = [
   {
     title: "shino",
     description: "An advanced analytics interface featuring real-time data visualization and AI-driven insights.",
-    image: "/src/assets/images/shino.png",
+    image: shinoImg,
     tags: ["D3.js", "Analytics", "React"],
     demo: "#",
     github: "#",
