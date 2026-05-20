@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-brand-purple/20 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-brand-blue/20 rounded-full blur-[120px] animate-pulse delay-1000" />
       
-      <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12">
+      <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <div className="flex-1 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex-1 relative"
         >
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto">
+          <div className="relative w-52 h-52 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto -mt-6 sm:mt-0">
             {/* Ambient Glows */}
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-purple to-brand-neon rounded-full blur-3xl opacity-20 animate-pulse" />
             
@@ -171,20 +171,20 @@ export default function Hero() {
             <motion.div 
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 glass p-4 rounded-xl shadow-2xl z-20"
+              className="absolute top-2 right-2 sm:-top-6 sm:-right-6 glass p-2 sm:p-4 rounded-xl shadow-2xl z-20"
             >
-              <div className="w-10 h-10 bg-brand-neon/10 rounded-lg flex items-center justify-center text-brand-neon">
-                <code className="text-lg font-bold">{"{/}"}</code>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand-neon/10 rounded-lg flex items-center justify-center text-brand-neon">
+                <code className="text-sm sm:text-lg font-bold">{"{/}"}</code>
               </div>
             </motion.div>
             
             <motion.div 
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -left-6 glass px-5 py-3 rounded-full border border-white/10 shadow-2xl z-20 flex items-center gap-2.5 backdrop-blur-xl"
+              className="absolute bottom-2 left-2 sm:-bottom-6 sm:-left-6 glass px-3.5 py-2 sm:px-5 sm:py-3 rounded-full border border-white/10 shadow-2xl z-20 flex items-center gap-1.5 sm:gap-2.5 backdrop-blur-xl"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-brand-neon animate-pulse" />
-              <span className="text-xs font-mono font-medium tracking-wider text-white/80">REACT / TSX</span>
+              <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-brand-neon animate-pulse shrink-0" />
+              <span className="text-[10px] sm:text-xs font-mono font-medium tracking-wider text-white/80 whitespace-nowrap">REACT / TSX</span>
             </motion.div>
           </div>
         </motion.div>
