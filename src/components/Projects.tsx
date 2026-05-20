@@ -12,7 +12,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-display font-black tracking-[10px] uppercase opacity-20 absolute -top-12 left-0 pointer-events-none">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black tracking-[4px] sm:tracking-[10px] uppercase opacity-20 absolute -top-12 left-0 pointer-events-none select-none whitespace-nowrap">
               Selected Work
             </h2>
             <h3 className="text-4xl font-display font-bold relative z-10">
@@ -34,11 +34,11 @@ export default function Projects() {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="group"
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden glass mb-8 group-hover:neon-glow-blue group-hover:ring-2 group-hover:ring-brand-neon/30 transition-all duration-500 shadow-2xl">
+              <div className="relative aspect-video rounded-3xl overflow-hidden glass mb-8 group-hover:neon-glow-blue group-hover:ring-2 group-hover:ring-brand-neon/30 transition-all duration-500 shadow-2xl">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover scale-[1.15] origin-top-left opacity-90 group-hover:opacity-100 group-hover:scale-[1.2] transition-all duration-700 ease-out"
+                  className="w-full h-[112%] object-cover object-top opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out"
                   referrerPolicy="no-referrer"
                 />
                 
@@ -87,15 +87,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="mt-24 text-center">
-          <motion.button 
-             whileHover={{ scale: 1.05 }}
-             whileTap={{ scale: 0.95 }}
-             className="px-12 py-5 glass border-white/10 rounded-full font-bold uppercase tracking-widest text-sm hover:border-brand-neon/50 transition-colors"
-          >
-            View Full Archives
-          </motion.button>
-        </div>
+
       </div>
     </section>
   );

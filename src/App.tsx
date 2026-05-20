@@ -22,12 +22,12 @@ export default function App() {
   });
 
   return (
-    <div className="relative min-h-screen bg-black">
+    <div className="relative min-h-screen bg-black overflow-x-hidden">
       <CustomCursor />
       
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple to-brand-neon z-[60] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple to-brand-neon z-[60] origin-left shadow-[0_2px_15px_rgba(0,242,255,0.6),_0_4px_25px_rgba(157,80,187,0.4)]"
         style={{ scaleX }}
       />
 

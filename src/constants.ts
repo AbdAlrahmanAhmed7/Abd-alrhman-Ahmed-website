@@ -44,9 +44,9 @@ export const PROJECTS = [
     github: "#",
   },
   {
-    title: "AI Dashboard Concept",
+    title: "shino",
     description: "An advanced analytics interface featuring real-time data visualization and AI-driven insights.",
-    image: "/src/assets/images/ai_dashboard_project_1779204411982.png",
+    image: "/src/assets/images/shino.png",
     tags: ["D3.js", "Analytics", "React"],
     demo: "#",
     github: "#",
@@ -54,8 +54,8 @@ export const PROJECTS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { name: "GitHub", href: "https://github.com/AbdelrahmanAhmed", icon: "Github" },
+  { name: "GitHub", href: "https://github.com/AbdAlrahmanAhmed7", icon: "Github" },
   { name: "LinkedIn", href: "https://linkedin.com/in/AbdelrahmanAhmed", icon: "Linkedin" },
-  { name: "WhatsApp", href: "https://wa.me/yournumber", icon: "MessageCircle" },
-  { name: "Email", href: "mailto:crosboahmed@gmail.com", icon: "Mail" },
+  { name: "WhatsApp", href: "https://wa.me/201277466029", icon: "MessageCircle" },
+  { name: "Email", href: "mailto:abdelrahman.hmed77@gmail.com", icon: "Mail" },
 ];

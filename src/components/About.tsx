@@ -11,13 +11,13 @@ export default function About() {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex-1"
+            className="lg:col-span-5"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg glass flex items-center justify-center text-brand-purple">
@@ -25,24 +25,10 @@ export default function About() {
               </div>
               <span className="text-brand-purple font-bold tracking-widest uppercase text-sm">About Me</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">
               Obsessed with <br />
               <span className="text-gradient">Digital Perfection</span>
             </h2>
-            <div className="space-y-6 text-white/50 text-lg leading-relaxed font-light">
-              <p>
-                My journey in web development started with a simple curiosity about how pixels come to life. 
-                Today, I specialize in transforming complex requirements into simplified, beautiful digital products.
-              </p>
-              <p>
-                I thrive at the intersection of design and engineering, ensuring every interaction feels natural, 
-                every animation serves a purpose, and every line of code is clean and scalable.
-              </p>
-              <p>
-                Whether it's building a high-conversion landing page or a complex AI-powered dashboard, 
-                my goal remains the same: delivering an unforgettable user experience.
-              </p>
-            </div>
           </motion.div>
 
           <motion.div 
@@ -50,7 +36,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {highlights.map((item, index) => (
               <div key={index} className="glass p-8 rounded-3xl hover:border-brand-purple/40 transition-colors group">
