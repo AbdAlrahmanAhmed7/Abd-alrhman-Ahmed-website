@@ -1,174 +1,77 @@
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { SOCIAL_LINKS } from "../constants";
 import * as Icons from "lucide-react";
-import { Send, CheckCircle2, Loader2 } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-
-    setStatus("submitting");
-
-    try {
-      // Free serverless submit API that works client-side without a custom backend!
-      // Here we simulate the pipeline connection with premium holographic feedback
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="glass p-6 sm:p-10 md:p-20 rounded-2xl sm:rounded-[3rem] relative overflow-hidden">
-          {/* Background shapes */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-blue/10 rounded-full blur-[100px] -mr-32 -mt-32" />
+        <div className="glass p-8 sm:p-12 md:p-16 rounded-2xl sm:rounded-[3rem] relative overflow-hidden">
+          {/* Background decoration shapes */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-brand-blue/10 rounded-full blur-[100px] -mr-40 -mt-40 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-neon/5 rounded-full blur-[120px] -ml-40 -mb-40 pointer-events-none" />
           
-          <div className="flex flex-col lg:flex-row gap-20 relative z-10">
-            <div className="flex-1">
-              <h2 className="text-5xl font-display font-bold mb-6">
-                Let's Build <br />
-                <span className="text-gradient">Something Future</span>
-              </h2>
-              <p className="text-white/50 text-lg mb-12 font-light">
-                Available for freelance projects and high-impact full-time roles. 
-                Have a vision? Let's bring it to life with modern code and premium design.
-              </p>
-              
-              <div className="space-y-8">
-                {SOCIAL_LINKS.map((link) => {
-                  // @ts-ignore
-                  const Icon = Icons[link.icon as keyof typeof Icons] || Icons.Mail;
-                  return (
-                    <a 
-                       key={link.name} 
-                       href={link.href}
-                       className="flex items-center gap-6 group hover:translate-x-3 transition-transform"
-                     >
-                      <div className="w-14 h-14 rounded-2xl glass-dark flex items-center justify-center text-white group-hover:bg-brand-neon group-hover:text-black transition-all">
-                        <Icon size={24} />
-                      </div>
-                      <div>
-                        <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/30">{link.name}</p>
-                        <p className="font-bold text-xl">
-                          {link.name === "Email" 
-                            ? "abdelrahman.hmed77@gmail.com" 
-                            : link.name === "WhatsApp" 
-                              ? "01277466029" 
-                              : link.name}
-                        </p>
-                      </div>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
+          <div className="relative z-10 text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-neon mb-3 inline-block">
+              Connection Pipeline
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-6">
+              Let's Build <span className="text-gradient">Something Future</span>
+            </h2>
+            <p className="text-white/60 text-base sm:text-lg font-light leading-relaxed">
+              Available for freelance projects, open-source collaboration, and high-impact roles. 
+              Have an idea or opportunity? Get in touch directly through any of the secure channels below.
+            </p>
+          </div>
 
-            <div className="flex-1">
-              <AnimatePresence mode="wait">
-                {status === "success" ? (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    className="h-full flex flex-col items-center justify-center text-center p-8 glass-dark rounded-[2rem] border border-brand-neon/20 min-y-[400px]"
-                  >
-                    <motion.div
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="w-20 h-20 rounded-full bg-brand-neon/10 flex items-center justify-center text-brand-neon mb-6"
-                    >
-                      <CheckCircle2 size={40} />
-                    </motion.div>
-                    <h3 className="text-2xl font-bold tracking-tight mb-3">Transmission Secured!</h3>
-                    <p className="text-white/60 text-sm max-w-sm mb-6 leading-relaxed">
-                      تم استلام رسالتك بنجاح! سأتواصل معك عبر الجيميل أو الواتساب في أقرب وقت ممكن.
-                    </p>
-                    <motion.button
-                      onClick={() => setStatus("idle")}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-6 py-2.5 rounded-full border border-white/10 hover:border-brand-neon/50 text-xs text-white/80 font-mono tracking-widest transition-colors uppercase bg-white/5"
-                    >
-                      Send Another Message
-                    </motion.button>
-                  </motion.div>
-                ) : (
-                  <motion.form 
-                    onSubmit={handleSubmit}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="space-y-6"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/30 ml-4">Full Name</label>
-                        <input 
-                          type="text" 
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder="John Doe"
-                          className="w-full glass-dark border-white/5 py-4 px-6 rounded-2xl focus:border-brand-neon/50 outline-none transition-all text-white"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/30 ml-4">Email Address</label>
-                        <input 
-                          type="email" 
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="hello@world.com"
-                          className="w-full glass-dark border-white/5 py-4 px-6 rounded-2xl focus:border-brand-neon/50 outline-none transition-all text-white"
-                        />
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {SOCIAL_LINKS.map((link, idx) => {
+              // @ts-ignore
+              const Icon = Icons[link.icon as keyof typeof Icons] || Icons.Mail;
+              
+              // Custom label values for aesthetic layout
+              let displayValue = link.name;
+              if (link.name === "Email") displayValue = "abdelrahman.hmed77@gmail.com";
+              else if (link.name === "WhatsApp") displayValue = "+20 1277466029";
+              else if (link.name === "GitHub") displayValue = "AbdAlrahmanAhmed7";
+              else if (link.name === "LinkedIn") displayValue = "Abdelrahman Ahmed";
+
+              return (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  whileHover={{ 
+                    y: -6, 
+                    scale: 1.02,
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group flex flex-col justify-between p-6 sm:p-8 rounded-2xl glass-dark border border-white/5 hover:border-brand-neon/30 active:border-brand-neon/45 hover:shadow-[0_0_50px_rgba(0,255,163,0.06)] min-h-[220px] transition-all duration-300"
+                >
+                  <div className="flex justify-between items-start mb-8">
+                    <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-white/80 group-hover:bg-brand-neon group-hover:text-black group-hover:shadow-[0_0_20px_rgba(0,255,163,0.4)] transition-all duration-300">
+                      <Icon size={26} />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/30 ml-4">Message</label>
-                      <textarea 
-                        rows={6}
-                        required
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Tell me about your amazing project..."
-                        className="w-full glass-dark border-white/5 py-4 px-6 rounded-2xl focus:border-brand-neon/50 outline-none transition-all resize-none text-white"
-                      />
-                    </div>
-                    
-                    <motion.button 
-                      type="submit"
-                      disabled={status === "submitting"}
-                      whileHover={status === "idle" ? { scale: 1.02 } : {}}
-                      whileTap={status === "idle" ? { scale: 0.98 } : {}}
-                      className={`w-full py-5 font-extrabold uppercase tracking-widest rounded-2xl flex items-center justify-center gap-3 transition-colors ${
-                        status === "submitting" 
-                          ? "bg-brand-purple/20 text-brand-purple cursor-not-allowed" 
-                          : "bg-white text-black hover:bg-brand-neon"
-                      }`}
-                    >
-                      {status === "submitting" ? (
-                        <>
-                          Broadcasting Data <Loader2 size={20} className="animate-spin" />
-                        </>
-                      ) : (
-                        <>
-                          Initiate Transmission <Send size={20} />
-                        </>
-                      )}
-                    </motion.button>
-                  </motion.form>
-                )}
-              </AnimatePresence>
-            </div>
+                    <Icons.ArrowUpRight size={18} className="text-white/20 group-hover:text-brand-neon group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                  </div>
+                  
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/30 mb-2 block">
+                      {link.name}
+                    </span>
+                    <h3 className="font-bold text-lg text-white/90 group-hover:text-white transition-colors break-all">
+                      {displayValue}
+                    </h3>
+                  </div>
+                </motion.a>
+              );
+            })}
           </div>
         </div>
       </div>

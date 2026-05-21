@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { PROJECTS } from "../constants";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export default function Projects() {
   return (
@@ -54,16 +54,6 @@ export default function Projects() {
                     className="w-14 h-14 rounded-full bg-brand-neon text-black flex items-center justify-center shadow-xl"
                   >
                     <ExternalLink size={24} />
-                  </motion.a>
-                  <motion.a 
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    href={project.github} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md text-white flex items-center justify-center border border-white/20 shadow-xl"
-                  >
-                    <Github size={24} />
                   </motion.a>
                 </div>
               </div>
