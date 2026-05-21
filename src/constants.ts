@@ -49,11 +49,11 @@ export const PROJECTS = [
     github: "#",
   },
   {
-    title: "shino",
-    description: "An advanced analytics interface featuring real-time data visualization and AI-driven insights.",
+    title: "Shino Street Wear",
+    description: "A premium fashion e-commerce experience for high-end streetwear, featuring bold aesthetics and fluid layouts.",
     image: shinoImg,
-    tags: ["D3.js", "Analytics", "React"],
-    demo: "#",
+    tags: ["React", "E-Commerce", "Tailwind"],
+    demo: "https://shino-street-wear.vercel.app/",
     github: "#",
   },
 ];
