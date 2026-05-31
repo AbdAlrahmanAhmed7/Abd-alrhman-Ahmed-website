@@ -12,6 +12,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
+import BackToTop from "./components/BackToTop";
 
 export default function App() {
   const { scrollYProgress } = useScroll();
@@ -42,6 +43,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <BackToTop />
       
       {/* Global Background Glow */}
       <div className="fixed inset-0 z-[-1] pointer-events-none opacity-30">
